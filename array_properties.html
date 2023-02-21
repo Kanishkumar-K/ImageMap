@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Javascript Array Properties</title>
+    </head>
+    <body bgcolor="#e6c877" style="border: 2px solid black; padding:30px;">
+        <H1 style="text-align: center";>JS Array Properties</H1>
+
+        <script>
+            
+            function marks(pass) {
+                return pass >=50;
+            }
+            // CopyWithin
+            document.writeln("<h5> 1. Copywithin() </h5>");
+            const subjects = ["Tamil","English","Maths","Science"];
+            document.writeln(subjects.copyWithin(2, 0));
+
+        
+            const passs = [89, 90, 65, 67];
+            document.writeln("<h5> 2. Every() </h5>");
+            document.writeln(passs.every(marks));
+
+            document.writeln("<h5> 3. Some() </h5>");
+            document.writeln(passs.some(marks));
+
+            document.writeln("<h5> 4. Fill() </h5>");
+            subjects.fill("Elective paper", 2, 4);
+            document.writeln(subjects);
+
+            document.writeln("<h5>5. Find() </h5>");
+            document.writeln(passs.find(marks));
+
+            document.writeln("<h5> 6. Includes() </h5>");
+            document.writeln(subjects.includes("Social", 3));
+            document.writeln("<h5> 7. Filter() </h5>");
+            const result = passs.filter(marks);
+            document.writeln(result);
+
+          
+        </script>
+    </body>
+</html>
