@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let x = document.forms["login"]["username"].value;
+            let y = document.forms["login"]["pwd"].value;
+            if (x == "" && y == "") {
+                alert("Enter Username and password");
+                return false;
+            }
+            else if (x == ""){
+                alert("Enter Username");
+                return false;
+            }   
+            else if (y == ""){
+                alert("Enter password");
+                return false;
+            } 
+             else if(y.length <=8){
+                alert("password must contain atleast 8 characterss ");
+                return false;
+             }
+        } 
+     
+    </script>
+        
+</head>
+<body>
+    <center>
+        <h2>Login Page</h2>
+    <form name="login" >
+        <div>
+            username : <input type="text" name="username" >
+            <br><br>
+            Password : <input type="password" name="pwd">
+            <br><br>
+        </div>
+        <div>
+            <input type="submit" name="submit" onclick="validateForm()" form action="https://yomovies.help/"> &nbsp;&nbsp;&nbsp;
+            <input type="reset" name="reset">
+        </div>
+    </form>
+    </center>
+</body>

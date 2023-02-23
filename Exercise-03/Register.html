@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Journey</title>
+        <script>
+            function registration() {
+                var na = document.forms["Register"]["name"].value;
+                var da = document.forms["Register"]["date-of-journey"].value;
+                var em = document.forms["Register"]["email"].value;
+                var ge = document.forms["Register"]["gender"].value;
+                var ph = document.forms["Register"]["phone"].value;
+                var days = document.forms["Register"]["no-of-days"].value;
+                if (na == "" && da == "" && em == "" && ge == "" && ph == "" && days == "") {
+                alert("Enter Details");
+                return false;
+            }
+            else if (na == ""){
+                alert("Enter Location Name");
+                return false;
+            }   
+            else if (da == ""){
+                alert("Enter date-of-journey");
+                return false;
+            } 
+             else if(em == ""){
+                alert("Enter mail Id");
+                return false;
+            }
+            else if (ge == ""){
+                alert("Enter gender");
+                return false;
+            } 
+            else if (ph == ""){
+                alert("Enter Pnone number! ");
+                return false;
+            } 
+            else if (days == ""){
+                alert("Enter valid number of days");
+                return false;
+            } 
+        }
+
+        </script>
+    </head>
+    <body bgcolor="skyblue">
+        <form name="Register">
+        <center>
+            <h3>Tourism - Booking Online Registration</h3>
+            <br>
+            <br>
+            <h3>Details</h3>
+            <br>
+            <table  style="border-sdayscing: 5pt;">
+                <tr>
+                    <td>Tourist Spot: </td>
+                    <td><input type="text" name="name" placeholder="Enter Name"></td>
+                </tr>
+                <tr>
+                    <td>Date of Travel: </td>
+                    <td><input type="date" name="date-of-journey"></td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Gender : </td>
+                    <td>
+                        <select name="gender">
+                            <option value="">Select gender</option>
+                            <option value="Male">M</option>
+                            <option value="Female">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone No. : </td>
+                    <td><input type="tel" name="phone"></td>
+                </tr>    
+                <tr>
+                    <td>No of days:</td>
+                    <td><input type="number" name="no-of-days" min=1 ></td>
+                </tr>      
+        </table>
+        <br><br>
+        <div>
+            <input type="submit" name="submit" onclick="registration()" formaction="login.html">&nbsp;&nbsp;&nbsp;
+            <input type="reset" name="reset";>
+        </div>
+        </center>
+        </form>
+    </body>
+</html>
