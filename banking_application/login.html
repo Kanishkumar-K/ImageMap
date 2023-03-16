@@ -45,6 +45,7 @@
 </head>
 <body>
 	<h1><center>BASIC BANKING APPLICATION</center></h1><br>
+	<p>Usename and password cannot be empty. Use any string</p>
 	<form id="login-form">
 		<label for="username">Username:</label>
 		<input type="text" id="username" name="username" required>
@@ -87,7 +88,7 @@
 			// check if all input fields are valid
 			if (usernameInput.value && passwordInput.value) {
 				// redirect to another page upon successful submission
-				window.location.href = 'banking_application/index.html';
+				window.location.href = '/index.html';
 			}
 		});
 	</script>
