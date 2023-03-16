@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ACCOUNT CREATION</title>
+        <script>
+            function registration() {
+                var na = document.forms["Register"]["name"].value;
+                var Aadhar Number = document.forms["Register"]["num1"].value;
+                var em = document.forms["Register"]["email"].value;
+                var ge = document.forms["Register"]["gender"].value;
+                var ph = document.forms["Register"]["phone"].value;
+                if (na != "" && da != "" && em != "" && ge != "" && ph != "") 
+                {
+                window.alert("Sucessfully created!");
+            }
+         
+        }
+
+        </script>
+    </head>
+    <body bgcolor="skyblue">
+        <form name="Register">
+            <h3>ACCOUNT CREATION</h3>
+            <br>
+            <br>
+            <h3>Details</h3>
+            <br>
+            <table  style="border-sdayscing: 5pt;">
+                <tr>
+                    <td>NAME: </td>
+                    <td><input type="text" name="name" placeholder="Enter Name" required></td>
+                </tr>
+                <tr>
+                    <td>Aadhar Number: </td>
+                    <td><input type="text" name="num1" min="12"  required></td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Gender : </td>
+                    <td>
+                        <select name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="Male">M</option>
+                            <option value="Female">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone No. : </td>
+                    <td><input type="tel" name="phone" required></td>
+                </tr>    
+                  
+        </table>
+        <br><br>
+        <div>
+            <input type="submit" name="submit" onclick="registration()" formaction="index.html" >&nbsp;&nbsp;&nbsp;
+            <input type="reset" name="reset";>
+
+        </div>
+        </form>
+    </body>
+</html>
