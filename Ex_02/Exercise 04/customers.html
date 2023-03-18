@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+body {
+    background-color: #b5f4f5;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  padding: 1em;
+  line-height: 1.5;
+}
+
+.flex {
+    border: 3px solid #a1051c;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items:center;
+  margin: 0 auto;
+  border-radius:5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.element-center {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+.a11{
+color: #9c0629;
+}
+
+.typewrite {
+    font-size: 16pt;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    margin-top: 0.3em;
+}
+
+#inputs {
+    padding: 10px;
+}
+
+input,
+button {
+  font-size: .85em;
+  padding: .65em 1em;
+  border-radius: .3em;
+  outline: 0;
+}
+input {
+  border: 2px solid #dcdcdc;
+  margin-right: 1em;
+}
+
+button {
+    color: white;
+    background: #508abc;
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+label {
+    font-size: 2em;
+}
+
+#btnDeposit, #btnWithdraw {
+    width: 8em;
+}
+    </style>
+    </head>
+<body class="a11" bgcolor="white">
+  <div class="flex">
+  <div class="element-center">
+    <div id="acctBalance">
+            <span class="wrap"></span>
+        </a>
+        <h1>
+            Account Balance
+        </h1>
+        <label id="acctBalanceLbl"></label>
+    </div><br><br>
+    <div id="inputs">
+        <h2>
+            Deposit Amount
+        </h2>
+        <input type="text" id="userDeposit" required>
+        <button id="btnDeposit">Deposit</button>
+        <h2>
+            Withdraw Amount
+        </h2>
+        <input type="text" id="userWithdraw" required>
+        <button id="btnWithdraw">Withdraw</button>
+    </div>
+  </div>
+  </div>
+<script>
+    const acctBalanceLbl = document.getElementById("acctBalanceLbl");
+const deposits = [];
+const withdrawals = [];
+let totalBalance = 2500;
+const userDeposit = document.getElementById("userDeposit");
+const btnDeposit = document.getElementById("btnDeposit");
+const userWithdraw = document.getElementById("userWithdraw");
+const btnWithdraw = document.getElementById("btnWithdraw");
+
+// Create our number formatter.
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'inr',
+    minimumFractionDigits: 2,
+    /* 
+    the default value for minimumFractionDigits depends on the currency
+    and is usually already 2
+    */
+  });
+
+// accept deposits from user, store deposits in array
+btnDeposit.addEventListener('click', () => {
+
+    // checks if deposit is a number
+    if (isNaN(userDeposit.value)) {
+        alert("Please enter valid amount.");
+        return userDeposit.value = '';
+    } else {
+
+    // checks if deposit meets parameters
+        if (userDeposit.value < 1|| userDeposit.value > 100000) {
+            alert("You can only deposit between Rupee 1 and 1,00,000.")
+            return userDeposit.value = '';
+        } else {
+    
+        // push deposit to array
+        deposits.push(Number(userDeposit.value));
+        // calculate Total Balance
+        totalBalance += (Number(userDeposit.value));
+                alert("Amount Deposit Successful!");
+
+
+        // format TotalBalance to show $ XX.XX (2 decimal places)
+        let totalBalanceFormatted = formatter.format(totalBalance);
+        document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
+
+    // print deposit to console to verify success
+    console.log("$" + userDeposit.value);
+    return userDeposit.value = '';
+    }
+}
+    
+});
+
+// accept withdrawals from user, store withdrawals in array
+btnWithdraw.addEventListener('click', () => {
+
+    // checks if withdrawal is a number
+    if (isNaN(userWithdraw.value)) {
+        alert("Please enter valid amount.");
+        return userWithdraw.value = '';
+    } else {
+
+        // checks if withdrawal meets parameters
+        if (userWithdraw.value > totalBalance - 500) {
+            alert("Transaction Failed. Minimum balance Rs.500 should be maintained");
+            return userWithdraw.value = '';
+        } else {
+
+        // push withdrawal to array
+        withdrawals.push(Number(userWithdraw.value));
+        // calculate Total Balance
+        totalBalance -= (Number(userWithdraw.value));
+                alert("Amount Withdraw Successful!");
+
+
+        let totalBalanceFormatted = formatter.format(totalBalance);
+        document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
+
+    // print withdrawal to console to verfify success
+    console.log("$" + userWithdraw.value);
+    return userWithdraw.value = '';
+    }
+}
+});
+
+
+let totalBalanceFormatted = formatter.format(totalBalance);
+
+document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
+    </script>
+    </body>
+</html>
