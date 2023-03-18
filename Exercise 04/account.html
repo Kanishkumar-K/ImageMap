@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title> 
+    <script>
+        function validate() {
+            var name = document.forms.f.id.value;
+            var email = document.forms.f.eid.value;
+            var date = document.forms.f.date.value;
+            var phone = document.forms.f.ph.value;
+            var p = document.forms.f.pd.value;
+            var p1 = document.forms.f.pd1.value;
+            var pan = document.forms.f.pn.value;
+            var a = document.forms.f.aad.value;
+            var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+            var regPhone=/^\d{10}$/;
+            var regName = /\d+$/g;
+            var regPassword = /^[A-Za-z0-9]+$/;
+
+            if (name == "" || regName.test(name)){
+                window.alert("Enter the name");
+                name.focus();
+                return false;
+            }
+
+            else if (email == "" || !regEmail.test(email)){
+                window.alert("Enter valid e-mail address by specing @gmail.com at end");
+                email.focus();
+                return false;
+            }
+            else if (date == ""){
+                window.alert("Enter Date of Birth");
+                date.focus();
+                return false;
+            }
+            else if (phone == "" || !regPhone.test(phone)){
+                window.alert("Enter valid phone number");
+                phone.focus();
+                return false;
+            }
+            else if (a == ""){
+                alert("Enter Aadhar Card Number");
+                return false;
+            }
+
+            else if (pan == ""){
+                alert("Enter Pan Card Number");
+                return false;
+            }
+            else if (p == "" || !regPassword.test(p)){
+                window.alert("Enter valid password");
+                p.focus();
+                return false;
+            }
+            else if (p1 == "" || !regPassword.test(p1)){
+                window.alert("Enter valid verify password");
+                p1.focus();
+                return false;
+            }
+            else if (p !== p1){
+                window.alert("Check password");
+                return false;
+            }
+
+        }
+    </script>
+    <style>
+        .center {
+            width: 400px; 
+            margin: auto; 
+            text-align: center;
+            padding: 10em;
+
+        }
+        tag {
+            font-family:'Times New Roman', Times, serif;
+        }
+        table {
+            font-family:'Times New Roman', Times, serif;font-weight: bold;
+            border-spacing: 5pt;
+        }
+        .button:hover{
+            background-color: black;
+            color: whitesmoke;
+            cursor: pointer;
+            border-radius: 7pt;
+        }
+        
+    </style>
+</head>
+<body bgcolor="tomato">
+    <div class="center">
+        <h1>
+            <tag><b>Register Your Details</b></tag><br>
+        </h1>
+            <form name="f" onsubmit="return validate()">
+                <center>
+                <table class="table">
+                    <tr>
+                        <td>Username </td>
+                        <td><input type="text" name="id" pattern="[A-Za-z0-9]+"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Email id </td>
+                        <td><input type="email" name="eid" ></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date of birth </td>
+                        <td><input type="date" name="date" ></td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone No</td>
+                        <td><input type="tel" name="ph" pattern="[0-9]+"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Address</td>
+                        <td><textarea name="address" required></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td>Proof</td>
+                        <td>
+                            <select name="Proof" required>
+                            <option value="">Select a proof</option>
+                            <option value="Passport">Passport</option>
+                            <option value="Driving License">Driving License</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Upload Proof</td>
+                        <td><input type="file" name="upload" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Aadhar Card Number</td>
+                        <td><input type="text" name="aad"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Pan Card Number</td>
+                        <td><input type="text" name="pn"></td>
+                    </tr>
+
+                    <tr>
+                        <td>New Password </td>
+                        <td> <input type="password" name="pd"></td>
+                    </tr>
+                    <tr>
+                        <td>Verify Password </td>
+                        <td><input type="password" name="pd1"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><input type="submit" name="submit" class="button" formaction="index.html"></td>
+                        <td><input type="reset" class="button" style="margin-left: 47%;" ></td>
+                    </tr>
+
+                </table>
+            </center>
+            </form>
+    </div>
+</body>
+</html>
