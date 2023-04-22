@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student IP Marklist</title>
+</head>
+
+<style>
+*{
+    color: beige;
+}
+
+h1{
+    text-align: center;
+}
+
+.s1{
+    border: 2px solid white;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+</style>
+
+<body style="background-image: url('sample.jpg');">
+    <h1>Student Marklist - IP</h1>
+
+    <h2 class="s1" style="background-color:aliceblue; color:black;">ADD RECORD</h2>
+    
+    <form action="./create" method="post" class="s1">
+        <label for="id"> Register_No::</label>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="dept"> Department:</label>
+        <input type="text" id="dept" name="dept"><br>
+
+        <label for="dept"> Semester:</label>
+        <input type="text" id="sem" name="dept"><br>
+
+        <label for="marks">IP Marks:</label>
+        <input type="text" id="marks" name="marks"><br>
+        <br>
+        <input style="color:black" type="submit" value="SUBMIT">
+    </form>
+    <br />
+
+    <h2 class="s1" style="background-color:aliceblue; color:black;">UPDATE RECORD</h2>
+    <form method="get" action="./update" class="s1">
+         Name:<input type="text" name="name"></input><br>
+         IP  Marks:<input type="text" name="marks"></input><br><br>
+        <input style="color:black" type="submit" value="UPDATE"></input>
+    </form>
+    <br />
+
+    <br />
+
+    <h2 class="s1" style="background-color:aliceblue; color:black;">DELETE RECORDS</h2> 
+    <form action="./delete" method="post" class="s1">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <input style="color:black" type="submit" value="DELETE">
+    </form>
+
+    <h2 class="s1" style="background-color:aliceblue; color:black;">DISPLAY RECORDS</h2>
+    <a style="padding-left:2em;" href="./display">VIEW DETAILS</a><br />
+  <br />
+</body>
+</html>

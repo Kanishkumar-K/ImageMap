@@ -1,0 +1,41 @@
+<web-app>
+    <servlet>
+        <servlet-name>create</servlet-name>
+        <servlet-class>create</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+   <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>update</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>display</servlet-name>
+        <servlet-class>display</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>display</servlet-name>
+        <url-pattern>/display</url-pattern>
+    </servlet-mapping>
+
+ 
+
+
+</web-app>
