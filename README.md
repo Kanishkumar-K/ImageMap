@@ -7,3 +7,8 @@ Exercise -03 : Input validation using JS <br />
 Exercise -04 : Basic Banking Application <br />
 Exercise -05 : Invoke servelts in HTML forms  <br />
 Exercise -06 : Student Marklist database <br />
+Exercise -07:  Student Marklist database <br />
+Exercise -08:  Basic JSP<br />			
+Exercise -09:  XML Read and Write	<br />		
+Exercise -10:   PHP basic and Database access(Read and Write)	<br />
+Exercise -11:   Web Service	<br />		
