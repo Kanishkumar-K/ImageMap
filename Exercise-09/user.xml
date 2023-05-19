@@ -1,0 +1,81 @@
+<userlist>
+    <user>
+        <userid>usr01</userid>
+        <username>Kanish</username>
+        <Spot>ooty</Spot>
+        <phone>9000000078</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr02</userid>
+        <username>Pooja</username>
+        <Spot>chennai</Spot>
+        <phone>9111111111</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr03</userid>
+        <username>bob</username>
+        <Spot>telangana</Spot>
+        <phone>9222222222</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr04</userid>
+        <username>sameera</username>
+        <Spot>bangalore</Spot>
+        <phone>9555555555</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr05</userid>
+        <username>tina</username>
+        <Spot>Perambalur</Spot>
+        <phone>9666666666</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr06</userid>
+        <username>Peter</username>
+        <Spot>Chennai</Spot>
+        <phone>9846532158</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr07</userid>
+        <username>Dilip</username>
+        <Spot>Salem</Spot>
+        <phone>9632542161</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr08</userid>
+        <username>Debby</username>
+        <Spot>Trichy</Spot>
+        <phone>8645976532</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr09</userid>
+        <username>Akash</username>
+        <Spot>Mumbai</Spot>
+        <phone>9500126532</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+
+    <user>
+        <userid>usr10</userid>
+        <username>Naveen</username>
+        <Spot>Ooty</Spot>
+        <phone>9603040064</phone>
+        <No_of_days>3</No_of_days>
+    </user>
+</userlist>

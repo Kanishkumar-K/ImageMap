@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information from XML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0 0 20px;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #displayDIV {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        p.error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3><br><br>Search User</h3><br>
+        <h3>VIEW USER DATA FOR THE TOURIST SPOT BOOKING</h3>
+        <label for="myText">Enter User ID:</label>
+        <input type="text" id="myText" value="">
+        <input type="button" value="Get User Details" onclick="readXMLData()"><br><br><br><br>
+        <div id="displayDIV"></div>
+    </div>
+
+    <script>
+        function readXMLData() {
+            var xmlDocumentObject, id, name, spot, phone, noOfDays;
+            xmlDocumentObject = new XMLHttpRequest();
+            xmlDocumentObject.open("GET", "users.xml", false);
+            xmlDocumentObject.send();
+            xmlDocumentObject = xmlDocumentObject.responseXML;
+            id = xmlDocumentObject.getElementsByTagName("userid");
+            name = xmlDocumentObject.getElementsByTagName("username");
+            spot = xmlDocumentObject.getElementsByTagName("Spot");
+            phone = xmlDocumentObject.getElementsByTagName("phone");
+            noOfDays = xmlDocumentObject.getElementsByTagName("No_of_days");
+
+            var found = 0;
+            for (var i = 0; i < id.length; i++) {
+                var output = id[i].firstChild.nodeValue;
+                if (output == document.getElementById("myText").value) {
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (found == 1) {
+                displayDIV.innerHTML = "<table><tr><th>User ID</th><td>" + id[i].firstChild.nodeValue +
+                    "</td></tr><tr><th>User Name</th><td>" + name[i].firstChild.nodeValue +
+                    "</td></tr><tr><th>Tourist Spot</th><td>" + spot[i].firstChild.nodeValue +
+                    "</td></tr><tr><th>Mobile</th><td>" + phone[i].firstChild.nodeValue +
+                    "</td></tr><tr><th>No. of Days</th><td>" + noOfDays[i].firstChild.nodeValue +
+                    "</td></tr></table>";
+            } else {
+                displayDIV.innerHTML = "<p class='error'>User not found!</p>";
+            }
+        }
+    </script>
+</body>
+</html>
