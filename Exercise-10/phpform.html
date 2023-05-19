@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .error {
+            color: red;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><br><br><br>
+        <h2>PHP Form Validation</h2><br>
+        <h2>TOURISM WEBSITE - ONLINE BOOKING FORM</h2>
+        <p><span class="error">* required field</span></p>
+        <form method="post" action="10.php">
+            <label>* Name:</label>
+            <input type="text" name="name">
+            <br><br>
+            <label>* Tourist spot:</label>
+            <input type="text" name="spot">
+            <br><br>
+            <label>* Mobile:</label>
+            <input type="text" name="mobile">
+            <br><br>
+            <label>No. of days:</label>
+            <br>
+            <input type="radio" name="no_of_days" value="female">Less than 3
+            <input type="radio" name="no_of_days" value="male">3 days
+            <input type="radio" name="no_of_days" value="other">More than 3
+            <br><br><br>
+            <input type="submit" value="Submit"><br><br><br><br><br>
+        </form>
+    </div>
+</body>
+</html>
